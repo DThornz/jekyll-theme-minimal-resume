@@ -12,5 +12,7 @@ email: asadmirza33165@gmail.com
 # twitter_username: lorem_ipsum
 github_username:  DThornz
 # gplus_username:  lorem_ipsum
+# Google Analytics
+google_analytics: G-91CC5KCBCK
 
 exclude: ['package.json', 'src' , 'node_modules']
