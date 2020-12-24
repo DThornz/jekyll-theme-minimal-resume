@@ -51,7 +51,7 @@ a.active,a:hover{
   display: none;
 }
 label #btn,label #cancel{
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   color: white;
   border-radius: 5px;
