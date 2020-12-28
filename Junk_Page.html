@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/konpa/devicon@df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+
+<html lang="en">
+{% include sidebar.html %}
+<link rel="stylesheet" href="./assets/css/blog_landing.css">
+
+<body>
+  <div class="outerbox">
+    <main class="content">
+      {{ content }}
+    </main>
+
+    <footer class="footer">
+      <small>
+        &copy;
+        <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
+      </small>
+    </footer>
+  </div>
+
+  {% include contact_formspree.html %}
+
+</body>
+
+</html>
+
+<section class="posts">
+  {% for post in site.posts %}
+  <article class="post">
+     <h1 class="post-title">
+        <a href="{{ post.url }}">
+           {{ post.title }}
+        </a>
+     </h1>
+
+     <p class="post-date">{{ post.date | date_to_string }}</p>
+     {{ post.summary }}
+  </article>
+  {% endfor %}
+</section>
