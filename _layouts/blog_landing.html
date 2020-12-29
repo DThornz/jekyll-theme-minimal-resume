@@ -5,52 +5,19 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/konpa/devicon@df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-      <title>Blog Landing Page</title>
+      <link rel="stylesheet" href="assets/css/blog_landing.css">
+        <title>Blog Landing Page</title>
     </head>
     {% include sidebar.html %}
 
     <div class="container">
+      {% for post in site.posts %}
       <main>
-        <h2>Blog Post #1</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi vero quos fugit nobis! Quidem facere assumenda
-          cumque doloremque neque nulla, recusandae tempora perspiciatis ea laboriosam ipsum consectetur at iste esse
-          accusamus totam ratione quae voluptas fugit. Officia quam, est explicabo, recusandae commodi porro odio eos
-          quaerat laboriosam labore fugiat autem!</p>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p> {{ post.content | strip_html | truncatewords:50}}</p>
       </main>
       <hr>
-      <main>
-        <h2>Blog Post #2</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi vero quos fugit nobis! Quidem facere assumenda
-          cumque doloremque neque nulla, recusandae tempora perspiciatis ea laboriosam ipsum consectetur at iste esse
-          accusamus totam ratione quae voluptas fugit. Officia quam, est explicabo, recusandae commodi porro odio eos
-          quaerat laboriosam labore fugiat autem!</p>
-      </main>
-      <hr>
-      <main>
-        <h2>Blog Post #3</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi vero quos fugit nobis! Quidem facere assumenda
-          cumque doloremque neque nulla, recusandae tempora perspiciatis ea laboriosam ipsum consectetur at iste esse
-          accusamus totam ratione quae voluptas fugit. Officia quam, est explicabo, recusandae commodi porro odio eos
-          quaerat laboriosam labore fugiat autem!</p>
-      </main>
-      <hr>
-      <main>
-        <h2>Blog Post #4</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi vero quos fugit nobis! Quidem facere assumenda
-          cumque doloremque neque nulla, recusandae tempora perspiciatis ea laboriosam ipsum consectetur at iste esse
-          accusamus totam ratione quae voluptas fugit. Officia quam, est explicabo, recusandae commodi porro odio eos
-          quaerat laboriosam labore fugiat autem!</p>
-      </main>
-      <hr>
-      <main>
-        <h2>Blog Post #5</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi vero quos fugit nobis! Quidem facere assumenda
-          cumque doloremque neque nulla, recusandae tempora perspiciatis ea laboriosam ipsum consectetur at iste esse
-          accusamus totam ratione quae voluptas fugit. Officia quam, est explicabo, recusandae commodi porro odio eos
-          quaerat laboriosam labore fugiat autem!</p>
-      </main>
-      <hr>
-
+      {% endfor %}
       <footer class="footer">
         <small>
           &copy;
